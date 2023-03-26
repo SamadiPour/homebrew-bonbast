@@ -1,12 +1,14 @@
 class Bonbast < Formula
   include Language::Python::Virtualenv
+
   desc "A command-line tool for getting currencies exchange rates for IRR from Bonbast.com"
   homepage "https://github.com/SamadiPour/bonbast"
   version "0.5.3"
   url "https://files.pythonhosted.org/packages/source/b/bonbast/bonbast-0.5.3.tar.gz"
   sha256 "70cfce740b369dfa3a92b6cbcc6dbde0150c833f6e01b2a56de2c65a645f832f"
   license "MIT"
-  depends_on "python@3.9"
+
+  depends_on "python3"
   
   resource "beautifulsoup4" do
     url "https://files.pythonhosted.org/packages/c5/4c/b5b7d6e1d4406973fb7f4e5df81c6f07890fa82548ac3b945deed1df9d48/beautifulsoup4-4.12.0.tar.gz"
@@ -74,10 +76,11 @@ class Bonbast < Formula
   end
 
   def install
-  virtualenv_install_with_resources
+    virtualenv_create(libexec, "python3")
+    virtualenv_install_with_resources
   end
 
   test do
-      system bin / "bonbast", "--version"
+    system bin / "bonbast", "--version"
   end
 end
