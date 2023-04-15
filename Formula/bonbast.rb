@@ -5,7 +5,7 @@ class Bonbast < Formula
   homepage "https://github.com/SamadiPour/bonbast"
   version "0.5.4"
   url "https://files.pythonhosted.org/packages/source/b/bonbast/bonbast-0.5.4.tar.gz"
-  sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  sha256 "0d0d4664f5f45c08921e68038ea69277d7713036cf4d090c9dd1b0ec2dae60c1"
   license "MIT"
 
   depends_on "python3"
