@@ -35,6 +35,7 @@ jobs:
           sed -i "s/^  sha256 .*/  sha256 \"$SHA256\"/" bonbast.rb
       - name: Commit and push changes
         run: |
+          LATEST_VERSION=$(curl -s https://pypi.org/pypi/bonbast/json | jq -r '.info.version')
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
