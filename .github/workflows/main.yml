@@ -1,0 +1,39 @@
+name: Update brew version
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Update package version
+        run: |
+          # Retrieve the latest version of the package from PyPI
+          LATEST_VERSION=$(curl -s https://pypi.org/pypi/bonbast/json | jq -r '.info.version')
+
+          # Download the latest version of the package from PyPI
+          FILE_NAME="bonbast-$LATEST_VERSION.tar.gz"
+          DOWNLOAD_URL="https://files.pythonhosted.org/packages/source/b/bonbast/$FILE_NAME"
+          wget $DOWNLOAD_URL
+
+          # Calculate the SHA256 hash of the package
+          SHA256=$(shasum -a 256 $FILE_NAME | cut -d ' ' -f 1)
+          
+          # Delete the file
+          rm $FILE_NAME
+
+          # Update the .rb file with the new information
+          cd Formula
+          sed -i "s/^  version .*/  version \"$LATEST_VERSION\"/" bonbast.rb
+          sed -i "s|^  url .*|  url \"$DOWNLOAD_URL\"|" bonbast.rb
+          sed -i "s/^  sha256 .*/  sha256 \"$SHA256\"/" bonbast.rb
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "build: bump version to $LATEST_VERSION"
+          git push
