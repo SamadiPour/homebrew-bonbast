@@ -3,9 +3,9 @@ class Bonbast < Formula
 
   desc "A command-line tool for getting currencies exchange rates for IRR from Bonbast.com"
   homepage "https://github.com/SamadiPour/bonbast"
-  version "1.0.1"
-  url "https://files.pythonhosted.org/packages/source/b/bonbast/bonbast-1.0.1.tar.gz"
-  sha256 "cd675e54c9daa74f541c81e30d2acb13ecee237f938e8504ca1abfeb8aee8b6a"
+  version "1.0.2"
+  url "https://files.pythonhosted.org/packages/source/b/bonbast/bonbast-1.0.2.tar.gz"
+  sha256 "dc00114c00c5c976b1144d65741c30ede003d3b0313942a33298e8d3264597a1"
   license "MIT"
 
   depends_on "python3"
