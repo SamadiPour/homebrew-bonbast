@@ -11,7 +11,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: Homebrew/actions/setup-homebrew@main
-      - uses: Homebrew/actions/setup-git-user@main
+      - uses: Homebrew/actions/git-user-config@main
 
       - name: Fetch latest release from PyPI
         run: |
