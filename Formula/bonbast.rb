@@ -3,16 +3,11 @@ class Bonbast < Formula
 
   desc "Gold prices and Iranian Rial exchange rates from bonbast.com"
   homepage "https://github.com/SamadiPour/bonbast"
-  url "https://files.pythonhosted.org/packages/ef/d7/e855e5f9c80a9690ebe4548940217eba35924afec9337f7ee1a21dc1540b/bonbast-2.0.0.tar.gz"
-  sha256 "e04be065f72d283534b2a91576ce0cae2ef16493e824269dead32ab381846bb9"
+  url "https://files.pythonhosted.org/packages/61/d8/df348b43a54ec3614926cdf27b10f0fa8aadab81b0e018125396c901d0df/bonbast-2.0.1.tar.gz"
+  sha256 "02162386b37a6c6eaeff6229f80cc69dd22fdb48ba425201327f243b7bbc43c8"
   license "MIT"
 
   depends_on "python@3.15"
-
-  resource "beautifulsoup4" do
-    url "https://files.pythonhosted.org/packages/43/65/318323f98dbee45d42dff61d8f047181bc6f2268a9068cfad035a46be5af/beautifulsoup4-4.15.0.tar.gz"
-    sha256 "288e3ca7d54b06f2ac191970bc275c1939cb46d450b255bf6718b04aa37ab4f7"
-  end
 
   resource "certifi" do
     url "https://files.pythonhosted.org/packages/a3/c2/24167ea9858356b47a87a50d39908bfdb72ceeefe0041586e704e5376b3a/certifi-2026.7.22.tar.gz"
@@ -62,16 +57,6 @@ class Bonbast < Formula
   resource "rich" do
     url "https://files.pythonhosted.org/packages/c0/8f/0722ca900cc807c13a6a0c696dacf35430f72e0ec571c4275d2371fca3e9/rich-15.0.0.tar.gz"
     sha256 "edd07a4824c6b40189fb7ac9bc4c52536e9780fbbfbddf6f1e2502c31b068c36"
-  end
-
-  resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/71/c3/1b817965ac12dc002d7c9cd7dfffdd7d4fbf9b45763ef2ffe7b86ee94670/soupsieve-2.10.tar.gz"
-    sha256 "49e9380d7d2905463583bafe285e818c7366a9ed7b3aee221c1ac79c905d8bc0"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
-    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
   end
 
   resource "urllib3" do
