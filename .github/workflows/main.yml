@@ -26,6 +26,8 @@ jobs:
 
       - name: Generate formula
         run: |
+          # Pin whatever Homebrew's default `python` currently points to.
+          PYTHON=$(brew info --json=v2 python | jq -r '.formulae[0].name')
           cat > "$(brew --repo samadipour/bonbast)/Formula/bonbast.rb" <<EOF
           class Bonbast < Formula
             include Language::Python::Virtualenv
@@ -36,7 +38,7 @@ jobs:
             sha256 "$SHA256"
             license "MIT"
 
-            depends_on "python@3.14"
+            depends_on "$PYTHON"
 
             def install
               virtualenv_install_with_resources
