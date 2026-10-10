@@ -47,12 +47,12 @@ jobs:
             end
           end
           EOF
-          brew update-python-resources samadipour/bonbast/bonbast
+          brew update-python-resources --ignore-main-package-cooldown samadipour/bonbast/bonbast
 
       - name: Audit, install, test
         run: |
           brew audit --strict samadipour/bonbast/bonbast
-          brew install --build-from-source --verbose samadipour/bonbast/bonbast
+          brew install --verbose samadipour/bonbast/bonbast
           brew test --verbose samadipour/bonbast/bonbast
 
       - name: Commit
