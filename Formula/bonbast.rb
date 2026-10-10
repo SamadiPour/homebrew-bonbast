@@ -7,7 +7,7 @@ class Bonbast < Formula
   sha256 "e04be065f72d283534b2a91576ce0cae2ef16493e824269dead32ab381846bb9"
   license "MIT"
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   resource "beautifulsoup4" do
     url "https://files.pythonhosted.org/packages/43/65/318323f98dbee45d42dff61d8f047181bc6f2268a9068cfad035a46be5af/beautifulsoup4-4.15.0.tar.gz"
